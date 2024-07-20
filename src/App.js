@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Epuja from "./pages/Epuja";
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import PujaDetails from "./pages/PujaDetails";
+import Cart from "./pages/Cart";
+import Booking from "./pages/Booking";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen overflow-auto px-10">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/epuja" element={<Epuja />} />
+        <Route path="/epuja/:id" element={<PujaDetails />} />
+        <Route path="/epuja/cart/:id" element={<Cart />} />
+        <Route path="/epuja/sankalp/:id" element={<Booking />} />
+      </Routes>
     </div>
   );
 }
